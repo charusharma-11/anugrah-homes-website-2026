@@ -71,11 +71,15 @@ function Footer() {
             </h4>
 
             <p className="mt-5 text-sm leading-7 text-white/55">
-              Jattari, Uttar Pradesh
+               Jattari, Uttar Pradesh
             </p>
 
             <p className="mt-2 text-sm text-white/55">
-              Add your official phone and email here.
+               +917678279151,+919115253545
+           </p>
+
+           <p className="mt-2 text-sm text-white/55">
+              info@anugrahhomes.com
             </p>
 
             <button
