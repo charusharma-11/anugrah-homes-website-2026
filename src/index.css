@@ -1,14 +1,26 @@
 @import "tailwindcss";
 
+/* =========================================================
+   JATTARI PREMIUM THEME
+   Medium dark + readable + responsive
+========================================================= */
+
 :root {
-  --cream: #f7f3ea;
-  --white: #fffdf8;
   --forest: #173f35;
-  --forest-dark: #10251e;
-  --sage: #789b87;
-  --gold: #c8a96b;
-  --gold-light: #dfc995;
-  --text: #202522;
+  --forest-dark: #0d2923;
+  --forest-deep: #091c18;
+  --forest-light: #23594b;
+
+  --cream: #f3ead8;
+  --gold: #d8b66a;
+  --gold-light: #ead39b;
+
+  --text-main: #f7f4ec;
+  --text-soft: #d9ded8;
+  --text-muted: #b7c2bc;
+
+  --card: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.14);
 }
 
 html {
@@ -18,8 +30,13 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--white);
-  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(216, 182, 106, 0.12), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(54, 128, 108, 0.18), transparent 28%),
+    var(--forest-dark);
+
+  color: var(--text-main);
+
   font-family:
     Inter,
     ui-sans-serif,
@@ -28,82 +45,944 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+
+  overflow-x: hidden;
 }
 
-* {
-  box-sizing: border-box;
+/* =========================================================
+   BASIC TEXT VISIBILITY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main);
 }
 
-button,
-a,
-input,
-textarea,
-select {
-  font: inherit;
+p {
+  color: var(--text-soft);
+}
+
+a {
+  color: inherit;
 }
 
 button {
-  cursor: pointer;
+  font-family: inherit;
 }
+
+/* Existing Tailwind dark text ko readable banane ke liye */
+.text-gray-900,
+.text-gray-800,
+.text-gray-700,
+.text-gray-600,
+.text-gray-500 {
+  color: var(--text-soft) !important;
+}
+
+.text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+/* Dark text utility accidentally background me disappear na ho */
+.text-black {
+  color: #f7f4ec !important;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--forest) !important;
+}
+
+/* Har section ke andar content upar rahe */
+section > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* =========================================================
+   PREMIUM BACKGROUND SHAPES
+========================================================= */
+
+section::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+
+  left: -180px;
+  top: 10%;
+
+  border: 1px solid rgba(216, 182, 106, 0.2);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 35px rgba(216, 182, 106, 0.025),
+    0 0 0 70px rgba(216, 182, 106, 0.018);
+
+  animation: orbitSlow 18s linear infinite;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+
+  right: -100px;
+  bottom: 8%;
+
+  border: 1px solid rgba(92, 170, 145, 0.22);
+  border-radius: 46% 54% 58% 42% / 52% 40% 60% 48%;
+
+  animation: floatingShape 9s ease-in-out infinite;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* =========================================================
+   ALTERNATING SECTION DEPTH
+========================================================= */
+
+section:nth-of-type(even) {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.025),
+      transparent 55%
+    ),
+    var(--forest-dark) !important;
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+section .rounded-2xl,
+section .rounded-3xl,
+section .rounded-xl {
+  border-color: var(--card-border);
+}
+
+section .bg-white,
+section .bg-white\/95,
+section .bg-white\/90,
+section .bg-white\/80 {
+  background: rgba(255, 255, 255, 0.075) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  color: var(--text-main) !important;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+section .bg-gray-50,
+section .bg-gray-100 {
+  background: rgba(255, 255, 255, 0.06) !important;
+
+  color: var(--text-main) !important;
+}
+
+/* Card ke andar text */
+section .bg-white p,
+section .bg-white h1,
+section .bg-white h2,
+section .bg-white h3,
+section .bg-white h4,
+section .bg-white h5,
+section .bg-white h6 {
+  color: var(--text-main) !important;
+}
+
+/* =========================================================
+   INPUTS / CONTACT FORM
+========================================================= */
+
+input,
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.08) !important;
+
+  color: #ffffff !important;
+
+  border-color: rgba(255, 255, 255, 0.18) !important;
+
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--gold) !important;
+
+  box-shadow:
+    0 0 0 3px rgba(216, 182, 106, 0.12),
+    0 0 25px rgba(216, 182, 106, 0.08);
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Gold buttons */
+.bg-\[\#b18b4f\],
+.bg-\[\#dfc995\],
+.bg-\[\#c8a96b\] {
+  color: #10251e !important;
+}
+
+/* Green buttons */
+.bg-\[\#173f35\] {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header {
+  z-index: 100 !important;
+}
+
+header nav {
+  background: rgba(13, 41, 35, 0.88) !important;
+
+  border-color: rgba(255, 255, 255, 0.12) !important;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+/* Navbar text */
+header .nav-link {
+  color: #f3f1e9 !important;
+}
+
+header .nav-link:hover {
+  color: var(--gold-light) !important;
+}
+
+/* Navbar dropdown */
+header .absolute {
+  background: #153d33 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+header .absolute button {
+  color: #e9eee9 !important;
+}
+
+header .absolute button:hover {
+  background: rgba(216, 182, 106, 0.12) !important;
+  color: var(--gold-light) !important;
+}
+
+/* =========================================================
+   IMAGES
+========================================================= */
 
 img {
   max-width: 100%;
-  display: block;
 }
 
-::selection {
+img:not([class*="logo"]) {
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+/* Gallery hover */
+.group:hover img {
+  transform: scale(1.045);
+}
+
+/* =========================================================
+   IMAGE CARDS
+========================================================= */
+
+.overflow-hidden {
+  position: relative;
+}
+
+.overflow-hidden::after {
+  content: "";
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(216, 182, 106, 0.08),
+      transparent 40%,
+      rgba(35, 89, 75, 0.1)
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   PREMIUM GLOW
+========================================================= */
+
+.glow-gold {
+  box-shadow:
+    0 0 0 1px rgba(216, 182, 106, 0.18),
+    0 0 35px rgba(216, 182, 106, 0.12);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.075);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* =========================================================
+   FLOATING OVAL / ORBIT EFFECT
+========================================================= */
+
+.premium-orbit {
+  position: absolute;
+
+  width: 240px;
+  height: 100px;
+
+  border: 1px solid rgba(216, 182, 106, 0.35);
+
+  border-radius: 50%;
+
+  transform: rotate(-25deg);
+
+  animation: orbitFloat 8s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.premium-orbit::before,
+.premium-orbit::after {
+  content: "";
+
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
   background: var(--gold);
-  color: var(--forest-dark);
+
+  box-shadow:
+    0 0 15px rgba(216, 182, 106, 0.65);
+
+  animation: orbitDot 5s linear infinite;
 }
 
-html::-webkit-scrollbar {
-  width: 10px;
+.premium-orbit::after {
+  width: 8px;
+  height: 8px;
+
+  background: #75b9a4;
+
+  animation-duration: 7s;
+  animation-direction: reverse;
 }
 
-html::-webkit-scrollbar-track {
-  background: #f1eee6;
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes orbitSlow {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(180deg) translateY(20px);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(0);
+  }
 }
 
-html::-webkit-scrollbar-thumb {
-  background: var(--sage);
-  border-radius: 999px;
+@keyframes floatingShape {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0, -25px, 0) rotate(10deg);
+  }
 }
 
-html::-webkit-scrollbar-thumb:hover {
-  background: var(--forest);
+@keyframes orbitFloat {
+  0%,
+  100% {
+    transform: rotate(-25deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-18deg) translateY(-15px);
+  }
 }
 
-.nav-link {
-  color: rgb(32 37 34 / 0.72);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+@keyframes orbitDot {
+  0% {
+    transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
 }
 
-.nav-link:hover {
-  color: var(--forest);
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
 }
 
-.mobile-link {
-  display: block;
-  width: 100%;
-  border-radius: 0.75rem;
-  padding: 0.875rem 1rem;
-  text-align: left;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease;
+::-webkit-scrollbar-track {
+  background: var(--forest-deep);
 }
 
-.mobile-link:hover {
-  background: var(--cream);
+::-webkit-scrollbar-thumb {
+  background: #4d7669;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  section::before {
+    width: 300px;
+    height: 300px;
+    left: -150px;
+  }
+
+  section::after {
+    width: 220px;
+    height: 220px;
+    right: -100px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  section::before {
+    width: 230px;
+    height: 230px;
+    left: -120px;
+  }
+
+  section::after {
+    width: 170px;
+    height: 170px;
+    right: -80px;
+  }
+
+  section .rounded-3xl {
+    border-radius: 22px;
+  }
+
+  section .rounded-2xl {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  section::before {
+    width: 170px;
+    height: 170px;
+    left: -100px;
+  }
+
+  section::after {
+    width: 130px;
+    height: 130px;
+    right: -70px;
+  }
+
+  h1 {
+    line-height: 1.08;
+  }
+
+  h2 {
+    line-height: 1.15;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =========================================================
+   ABOUT + FAQ READABILITY FIX
+========================================================= */
+
+/* ---------- ABOUT ---------- */
+
+#about {
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(216, 182, 106, 0.10),
+      transparent 30%
+    ),
+    #173f35 !important;
+
+  color: #f8f5ed !important;
+}
+
+#about h1,
+#about h2,
+#about h3,
+#about h4,
+#about h5,
+#about h6 {
+  color: #ffffff !important;
+}
+
+#about p,
+#about span,
+#about li {
+  color: #dce5df !important;
+}
+
+#about .text-gray-900,
+#about .text-gray-800,
+#about .text-gray-700,
+#about .text-gray-600,
+#about .text-gray-500 {
+  color: #dce5df !important;
+}
+
+#about .text-gray-400 {
+  color: #b9c8c0 !important;
+}
+
+/* About cards */
+#about .bg-white,
+#about .bg-gray-50,
+#about .bg-gray-100 {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+#about .bg-white h1,
+#about .bg-white h2,
+#about .bg-white h3,
+#about .bg-white h4,
+#about .bg-white p,
+#about .bg-white span {
+  color: #ffffff !important;
+}
+
+
+/* ---------- FAQ ---------- */
+
+#faq {
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(65, 137, 116, 0.16),
+      transparent 30%
+    ),
+    #102f27 !important;
+
+  color: #f8f5ed !important;
+}
+
+#faq h1,
+#faq h2,
+#faq h3,
+#faq h4,
+#faq h5,
+#faq h6 {
+  color: #ffffff !important;
+}
+
+#faq p,
+#faq span,
+#faq li {
+  color: #dce5df !important;
+}
+
+#faq .text-gray-900,
+#faq .text-gray-800,
+#faq .text-gray-700,
+#faq .text-gray-600,
+#faq .text-gray-500 {
+  color: #dce5df !important;
+}
+
+#faq .text-gray-400 {
+  color: #b9c8c0 !important;
+}
+
+/* FAQ question boxes */
+#faq .bg-white,
+#faq .bg-gray-50,
+#faq .bg-gray-100 {
+  background: rgba(255, 255, 255, 0.075) !important;
+
+  color: #ffffff !important;
+
+  border-color: rgba(255, 255, 255, 0.15) !important;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+#faq .bg-white:hover,
+#faq .bg-gray-50:hover {
+  background: rgba(255, 255, 255, 0.11) !important;
+  border-color: rgba(216, 182, 106, 0.35) !important;
+}
+
+#faq .bg-white h1,
+#faq .bg-white h2,
+#faq .bg-white h3,
+#faq .bg-white h4,
+#faq .bg-white p,
+#faq .bg-white span {
+  color: #ffffff !important;
+}
+
+/* FAQ answer text */
+#faq [class*="text-gray"] {
+  color: #dce5df !important;
+}
+
+/* FAQ icons / arrows */
+#faq svg {
+  color: #dfc078 !important;
+  flex-shrink: 0;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  #about,
+  #faq {
+    color: #f8f5ed !important;
+  }
+
+  #about p,
+  #faq p {
+    color: #dce5df !important;
+    line-height: 1.7;
+  }
+
+  #about h2,
+  #faq h2 {
+    color: #ffffff !important;
+  }
+}
+/* =========================================================
+   FINAL ABOUT READABILITY + NAVBAR GAP FIX
+========================================================= */
+
+/* ---------------------------------------------------------
+   1. NAVBAR -> HOME EXTRA GAP FIX
+--------------------------------------------------------- */
+
+/* Fixed navbar ke liye unnecessary large top spacing remove */
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Home/Hero section ko navbar ke neeche unnecessarily push
+   nahi hone dena */
+#home {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Agar Hero ke andar first wrapper extra margin de raha ho */
+#home > div:first-child {
+  margin-top: 0 !important;
+}
+
+/* Navbar khud top par compact rahe */
+header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  header > div {
+    padding-top: 10px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 1023px) {
+  header > div {
+    padding-top: 7px !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   2. ABOUT SECTION — COMPLETE READABILITY FIX
+--------------------------------------------------------- */
+
+#about {
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(216, 182, 106, 0.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #173f35 0%,
+      #153a31 55%,
+      #102e27 100%
+    ) !important;
+
+  color: #ffffff !important;
+}
+
+/* EVERY text element inside About */
+#about h1,
+#about h2,
+#about h3,
+#about h4,
+#about h5,
+#about h6,
+#about p,
+#about span,
+#about strong,
+#about b,
+#about li,
+#about label {
+  color: #ffffff !important;
+}
+
+/* Paragraphs slightly softer */
+#about p {
+  color: #dce7e1 !important;
+}
+
+/* Small muted text */
+#about small {
+  color: #c5d2cb !important;
+}
+
+
+/* ---------------------------------------------------------
+   ABOUT TAILWIND TEXT OVERRIDES
+--------------------------------------------------------- */
+
+#about .text-black,
+#about .text-gray-900,
+#about .text-gray-800,
+#about .text-gray-700,
+#about .text-gray-600,
+#about .text-gray-500,
+#about .text-gray-400,
+#about .text-gray-300,
+#about .text-gray-200 {
+  color: #dce7e1 !important;
+}
+
+/* Headings always bright */
+#about .text-4xl,
+#about .text-5xl,
+#about .text-6xl,
+#about .text-3xl,
+#about .text-2xl,
+#about .text-xl,
+#about .font-bold,
+#about .font-semibold {
+  color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   ABOUT CARDS
+--------------------------------------------------------- */
+
+#about .bg-white,
+#about .bg-white\/95,
+#about .bg-white\/90,
+#about .bg-white\/80,
+#about .bg-gray-50,
+#about .bg-gray-100 {
+  background: rgba(255, 255, 255, 0.085) !important;
+
+  color: #ffffff !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Card ke andar ALL text */
+#about .bg-white *,
+#about .bg-gray-50 *,
+#about .bg-gray-100 * {
+  color: #ffffff !important;
+}
+
+
+/* ---------------------------------------------------------
+   ABOUT ICONS
+--------------------------------------------------------- */
+
+#about svg {
+  color: #e2c477 !important;
+  stroke: #e2c477 !important;
+}
+
+
+/* ---------------------------------------------------------
+   ABOUT LINKS / BUTTONS
+--------------------------------------------------------- */
+
+#about a {
+  color: #f0d58f !important;
+}
+
+#about button {
+  color: #ffffff !important;
+}
+
+#about button:hover {
+  color: #10251e !important;
+}
+
+
+/* ---------------------------------------------------------
+   ABOUT IMAGE OVERLAY
+--------------------------------------------------------- */
+
+#about img {
+  position: relative;
+  z-index: 2;
+}
+
+#about .overflow-hidden {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+
+/* ---------------------------------------------------------
+   3. ABOUT MOBILE READABILITY
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  #about h1,
+  #about h2,
+  #about h3 {
+    color: #ffffff !important;
+  }
+
+  #about p,
+  #about span,
+  #about li {
+    color: #dce7e1 !important;
+  }
+
+  #about .bg-white *,
+  #about .bg-gray-50 *,
+  #about .bg-gray-100 * {
+    color: #ffffff !important;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   4. PREVENT HIDDEN CONTENT UNDER NAVBAR
+--------------------------------------------------------- */
+
+html {
+  scroll-padding-top: 80px;
 }
 
 section {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 80px;
 }

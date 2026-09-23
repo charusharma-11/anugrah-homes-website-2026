@@ -1,15 +1,15 @@
 import Hero from "../components/Hero";
-import About from "../components/About";
-import WhyJattari from "../components/WhyJattari";
 import Services from "../components/Services";
-import Amenities from "../components/Amenities";
-import Price from "../components/Price";
-import Keyplan from "../components/Keyplan";
-import LayoutSection from "../components/LayoutSection";
-import Gallery from "../components/Gallery";
-import FAQ from "../components/FAQ";
-import News from "../components/News";
-import Contact from "../components/Contact";
+
+import About from "./About";
+import WhyJattari from "./WhyJattari";
+import Amenities from "./Amenities";
+import Keyplan from "./Keyplan";
+import LayoutSection from "./LayoutSection";
+import Gallery from "./Gallery";
+import FAQ from "./FAQ";
+import News from "./News";
+import Contact from "./Contact";
 
 function Home() {
   return (
@@ -19,7 +19,6 @@ function Home() {
       <WhyJattari />
       <Services />
       <Amenities />
-      <Price />
       <Keyplan />
       <LayoutSection />
       <Gallery />
