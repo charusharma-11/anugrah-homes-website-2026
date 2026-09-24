@@ -1,12 +1,6 @@
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 function Hero() {
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({
       behavior: "smooth",
@@ -35,15 +29,6 @@ function Hero() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1500px] items-center px-5 pb-16 pt-24 sm:px-8 lg:px-12 lg:pt-28">
         <div className="w-full max-w-3xl">
 
-          {/* Location */}
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#b78a52]/30 bg-white/85 px-4 py-2 shadow-sm backdrop-blur-sm">
-            <MapPin size={15} className="text-[#a65d3b]" />
-
-            <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#3b2a24]">
-              Jattari, Aligarh
-            </span>
-          </div>
-
           {/* Main Heading */}
           <h1 className="max-w-3xl font-serif text-4xl font-bold leading-[1.05] text-[#3b2a24] sm:text-5xl lg:text-7xl">
             A Better Place
@@ -65,14 +50,6 @@ function Hero() {
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#a65d3b] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#a65d3b]/20 transition hover:bg-[#84472e]"
             >
               Book a Site Visit
-              <ArrowRight size={17} />
-            </button>
-
-            <button
-              onClick={scrollToAbout}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#3b2a24]/15 bg-white/90 px-7 py-3.5 text-sm font-bold text-[#3b2a24] backdrop-blur-sm transition hover:border-[#a65d3b] hover:text-[#a65d3b]"
-            >
-              Explore Project
               <ArrowRight size={17} />
             </button>
           </div>

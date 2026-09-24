@@ -159,7 +159,6 @@ import WhyJattari from "./pages/WhyJattari";
 import Amenities from "./pages/Amenities";
 import Price from "./pages/Price";
 import Keyplan from "./pages/Keyplan";
-import LayoutSection from "./pages/LayoutSection";
 import Gallery from "./pages/Gallery";
 import FAQ from "./pages/FAQ";
 import News from "./pages/News";
@@ -192,7 +191,7 @@ function App() {
           <Route path="/amenities" element={<Amenities />} />
           <Route path="/price" element={<Price />} />
           <Route path="/keyplan" element={<Keyplan />} />
-          <Route path="/layout" element={<LayoutSection />} />
+    
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/news" element={<News />} />

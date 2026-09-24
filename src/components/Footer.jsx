@@ -1,207 +1,3 @@
-// import { Link } from "react-router-dom";
-// import {
-//   Phone,
-//   Mail,
-//   MapPin,
-//   ArrowUpRight,
-// } from "lucide-react";
-
-// function Footer() {
-//   const scrollTop = () => {
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//     });
-//   };
-
-//   return (
-//     <footer className="premium-footer">
-
-//       <div className="mx-auto max-w-[1450px]">
-
-//         <div className="mb-12 h-px bg-gradient-to-r from-transparent via-[#c8a65f]/60 to-transparent" />
-
-//         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_1fr]">
-
-//           {/* BRAND */}
-//           <div>
-//             <Link
-//               to="/"
-//               onClick={scrollTop}
-//               className="inline-flex items-center gap-3"
-//             >
-//               <div className="premium-footer-logo">
-//                 <Link to="/" className="inline-flex flex-col leading-none">
-//   <span className="font-serif text-2xl font-bold tracking-wide text-white">
-//     JATTARI
-//   </span>
-//   <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#dfc995]">
-//     Premium Plots
-//   </span>
-// </Link>
-//               </div>
-
-//               <div>
-//                 <h3 className="font-serif text-2xl font-semibold text-white">
-//                   Jattari
-//                 </h3>
-
-//                 <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.25em] text-[#d4b36e]">
-//                   Premium Plots
-//                 </p>
-//               </div>
-//             </Link>
-
-//             <p className="mt-6 max-w-md text-sm leading-7 text-white/55">
-//               Thoughtfully planned residential plots in Jattari,
-//               designed for comfortable living, connectivity and
-//               future possibilities.
-//             </p>
-
-//             {/* DECORATIVE ORBIT */}
-//             <div className="footer-orbit mt-8">
-//               <span />
-//               <span />
-//               <span />
-//             </div>
-//           </div>
-
-//           {/* LINKS */}
-//           <div>
-//             <h4 className="footer-heading">
-//               Quick Links
-//             </h4>
-
-//             <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-4">
-
-//               <Link to="/" className="footer-link">Home</Link>
-//               <Link to="/about" className="footer-link">About</Link>
-//               <Link to="/why-jattari" className="footer-link">Why Jattari</Link>
-//               <Link to="/amenities" className="footer-link">Amenities</Link>
-//               <Link to="/price" className="footer-link">Price</Link>
-//               <Link to="/keyplan" className="footer-link">Keyplan</Link>
-//               <Link to="/layout" className="footer-link">Layout</Link>
-//               <Link to="/gallery" className="footer-link">Gallery</Link>
-//               <Link to="/faq" className="footer-link">FAQ</Link>
-//               <Link to="/news" className="footer-link">News</Link>
-//               <Link to="/contact" className="footer-link">Contact</Link>
-
-//             </div>
-//           </div>
-
-//           {/* CONTACT */}
-//           <div>
-//             <h4 className="footer-heading">
-//               Get In Touch
-//             </h4>
-
-//             <div className="mt-7 space-y-5">
-
-//               <div className="footer-contact-item">
-//                 <div className="footer-contact-icon">
-//                   <MapPin size={17} />
-//                 </div>
-
-//                 <div>
-//                   <p className="footer-contact-label">
-//                     Location
-//                   </p>
-
-//                   <p className="footer-contact-text">
-//                     Jattari, Uttar Pradesh
-//                   </p>
-//                 </div>
-//               </div>
-
-//               <a
-//                 href="tel:+917678279151"
-//                 className="footer-contact-item group"
-//               >
-//                 <div className="footer-contact-icon">
-//                   <Phone size={17} />
-//                 </div>
-
-//                 <div>
-//                   <p className="footer-contact-label">
-//                     Phone
-//                   </p>
-
-//                   <p className="footer-contact-text group-hover:text-[#d9b978]">
-//                     +91 76782 79151
-//                   </p>
-//                 </div>
-//               </a>
-
-//               <a
-//                 href="tel:+919115253545"
-//                 className="footer-contact-item group"
-//               >
-//                 <div className="footer-contact-icon">
-//                   <Phone size={17} />
-//                 </div>
-
-//                 <div>
-//                   <p className="footer-contact-label">
-//                     Alternate Phone
-//                   </p>
-
-//                   <p className="footer-contact-text group-hover:text-[#d9b978]">
-//                     +91 91152 53545
-//                   </p>
-//                 </div>
-//               </a>
-
-//               <a
-//                 href="mailto:info@anugrahhomes.com"
-//                 className="footer-contact-item group"
-//               >
-//                 <div className="footer-contact-icon">
-//                   <Mail size={17} />
-//                 </div>
-
-//                 <div className="min-w-0">
-//                   <p className="footer-contact-label">
-//                     Email
-//                   </p>
-
-//                   <p className="break-all footer-contact-text group-hover:text-[#d9b978]">
-//                     info@anugrahhomes.com
-//                   </p>
-//                 </div>
-//               </a>
-
-//             </div>
-
-//             <Link
-//               to="/contact"
-//               className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#c8a65f] px-6 py-3.5 text-sm font-bold text-[#10251e] transition-all hover:-translate-y-1 hover:bg-white"
-//             >
-//               Contact Us
-//               <ArrowUpRight size={16} />
-//             </Link>
-//           </div>
-//         </div>
-
-//         <div className="mt-14 flex flex-col justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/35 sm:flex-row">
-//           <p>
-//             © 2026 Jattari. All rights reserved.
-//           </p>
-
-//           <button
-//             type="button"
-//             onClick={scrollTop}
-//             className="transition hover:text-[#d9b978]"
-//           >
-//             Back to Top ↑
-//           </button>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
-
-// export default Footer;
-
 import { Link } from "react-router-dom";
 import {
   Phone,
@@ -219,140 +15,205 @@ function Footer() {
   };
 
   return (
-    <footer className="premium-footer">
+    <footer className="premium-footer bg-[#eee4d5] px-5 py-12 sm:px-8 lg:px-10">
       <div className="mx-auto max-w-[1450px]">
 
-        <div className="mb-12 h-px bg-gradient-to-r from-transparent via-[#c8a65f]/60 to-transparent" />
+        {/* Top Line */}
+        <div className="mb-10 h-px bg-[#3b2a24]/15 sm:mb-12" />
 
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_1fr]">
+        {/* Main Footer */}
+        <div className="grid gap-10 sm:gap-12 lg:grid-cols-[1.2fr_0.8fr_1fr] lg:gap-16">
 
           {/* BRAND */}
-          <div>
+          <div className="min-w-0">
             <Link
               to="/"
               onClick={scrollTop}
               className="inline-flex flex-col leading-none"
             >
-              <span className="font-serif text-2xl font-bold tracking-wide text-white">
+              <span className="font-serif text-2xl font-extrabold tracking-wide text-black sm:text-3xl">
                 JATTARI
               </span>
 
-              <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#dfc995]">
+              <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[#a65d3b]">
                 Premium Plots
               </span>
             </Link>
 
-            <p className="mt-6 max-w-md text-sm leading-7 text-white/55">
+            <p className="mt-5 max-w-md text-sm font-bold leading-7 text-black sm:mt-6">
               Thoughtfully planned residential plots in Jattari,
               designed for comfortable living, connectivity and
               future possibilities.
             </p>
 
-            {/* DECORATIVE ORBIT */}
-            <div className="footer-orbit mt-8">
+            {/* Decorative Orbit */}
+            <div className="footer-orbit mt-7">
               <span />
               <span />
               <span />
             </div>
           </div>
 
-          {/* LINKS */}
+          {/* QUICK LINKS */}
           <div>
-            <h4 className="footer-heading">
+            <h4 className="footer-heading text-base font-extrabold text-black">
               Quick Links
             </h4>
 
-            <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-4">
-              <Link to="/" className="footer-link">Home</Link>
-              <Link to="/about" className="footer-link">About</Link>
-              <Link to="/why-jattari" className="footer-link">Why Jattari</Link>
-              <Link to="/amenities" className="footer-link">Amenities</Link>
-              <Link to="/price" className="footer-link">Price</Link>
-              <Link to="/keyplan" className="footer-link">Keyplan</Link>
-              <Link to="/layout" className="footer-link">Layout</Link>
-              <Link to="/gallery" className="footer-link">Gallery</Link>
-              <Link to="/faq" className="footer-link">FAQ</Link>
-              <Link to="/news" className="footer-link">News</Link>
-              <Link to="/contact" className="footer-link">Contact</Link>
+            <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 sm:mt-7 sm:gap-y-4">
+              <Link to="/" className="footer-link font-bold text-black">
+                Home
+              </Link>
+
+              <Link to="/about" className="footer-link font-bold text-black">
+                About
+              </Link>
+
+              <Link
+                to="/why-jattari"
+                className="footer-link font-bold text-black"
+              >
+                Why Jattari
+              </Link>
+
+              <Link
+                to="/amenities"
+                className="footer-link font-bold text-black"
+              >
+                Amenities
+              </Link>
+
+              <Link
+                to="/price"
+                className="footer-link font-bold text-black"
+              >
+                Price
+              </Link>
+
+              <Link
+                to="/keyplan"
+                className="footer-link font-bold text-black"
+              >
+                Keyplan
+              </Link>
+
+              <Link
+                to="/layout"
+                className="footer-link font-bold text-black"
+              >
+                Layout
+              </Link>
+
+              <Link
+                to="/gallery"
+                className="footer-link font-bold text-black"
+              >
+                Gallery
+              </Link>
+
+              <Link
+                to="/faq"
+                className="footer-link font-bold text-black"
+              >
+                FAQ
+              </Link>
+
+              <Link
+                to="/news"
+                className="footer-link font-bold text-black"
+              >
+                News
+              </Link>
+
+              <Link
+                to="/contact"
+                className="footer-link font-bold text-black"
+              >
+                Contact
+              </Link>
             </div>
           </div>
 
           {/* CONTACT */}
-          <div>
-            <h4 className="footer-heading">
+          <div className="min-w-0">
+            <h4 className="footer-heading text-base font-extrabold text-black">
               Get In Touch
             </h4>
 
-            <div className="mt-7 space-y-5">
+            <div className="mt-6 space-y-5 sm:mt-7">
 
-              <div className="footer-contact-item">
-                <div className="footer-contact-icon">
+              {/* Location */}
+              <div className="footer-contact-item flex items-start gap-4">
+                <div className="footer-contact-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#173f35] text-[#dfc995]">
                   <MapPin size={17} />
                 </div>
 
-                <div>
-                  <p className="footer-contact-label">
+                <div className="min-w-0">
+                  <p className="footer-contact-label text-xs font-extrabold uppercase tracking-wider text-black">
                     Location
                   </p>
 
-                  <p className="footer-contact-text">
+                  <p className="footer-contact-text mt-1 text-sm font-bold text-black">
                     Jattari, Uttar Pradesh
                   </p>
                 </div>
               </div>
 
+              {/* Phone */}
               <a
                 href="tel:+917678279151"
-                className="footer-contact-item group"
+                className="footer-contact-item flex items-start gap-4"
               >
-                <div className="footer-contact-icon">
+                <div className="footer-contact-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#173f35] text-[#dfc995]">
                   <Phone size={17} />
                 </div>
 
-                <div>
-                  <p className="footer-contact-label">
+                <div className="min-w-0">
+                  <p className="footer-contact-label text-xs font-extrabold uppercase tracking-wider text-black">
                     Phone
                   </p>
 
-                  <p className="footer-contact-text group-hover:text-[#d9b978]">
+                  <p className="footer-contact-text mt-1 text-sm font-bold text-black">
                     +91 76782 79151
                   </p>
                 </div>
               </a>
 
+              {/* Alternate Phone */}
               <a
                 href="tel:+919115253545"
-                className="footer-contact-item group"
+                className="footer-contact-item flex items-start gap-4"
               >
-                <div className="footer-contact-icon">
+                <div className="footer-contact-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#173f35] text-[#dfc995]">
                   <Phone size={17} />
                 </div>
 
-                <div>
-                  <p className="footer-contact-label">
+                <div className="min-w-0">
+                  <p className="footer-contact-label text-xs font-extrabold uppercase tracking-wider text-black">
                     Alternate Phone
                   </p>
 
-                  <p className="footer-contact-text group-hover:text-[#d9b978]">
+                  <p className="footer-contact-text mt-1 text-sm font-bold text-black">
                     +91 91152 53545
                   </p>
                 </div>
               </a>
 
+              {/* Email */}
               <a
                 href="mailto:info@anugrahhomes.com"
-                className="footer-contact-item group"
+                className="footer-contact-item flex items-start gap-4"
               >
-                <div className="footer-contact-icon">
+                <div className="footer-contact-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#173f35] text-[#dfc995]">
                   <Mail size={17} />
                 </div>
 
                 <div className="min-w-0">
-                  <p className="footer-contact-label">
+                  <p className="footer-contact-label text-xs font-extrabold uppercase tracking-wider text-black">
                     Email
                   </p>
 
-                  <p className="break-all footer-contact-text group-hover:text-[#d9b978]">
+                  <p className="footer-contact-text mt-1 break-all text-sm font-bold text-black">
                     info@anugrahhomes.com
                   </p>
                 </div>
@@ -360,29 +221,35 @@ function Footer() {
 
             </div>
 
+            {/* Contact Button */}
             <Link
               to="/contact"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#c8a65f] px-6 py-3.5 text-sm font-bold text-[#10251e] transition-all hover:-translate-y-1 hover:bg-white"
+              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#173f35] px-6 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:bg-[#a65d3b] sm:w-auto"
             >
               Contact Us
               <ArrowUpRight size={16} />
             </Link>
           </div>
+
         </div>
 
-        <div className="mt-14 flex flex-col justify-between gap-4 border-t border-white/10 py-6 text-xs text-white/35 sm:flex-row">
-          <p>
+        {/* Bottom */}
+        <div className="mt-10 flex flex-col gap-4 border-t border-[#3b2a24]/15 py-6 text-xs font-bold text-black sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
+
+          <p className="text-black">
             © 2026 Jattari. All rights reserved.
           </p>
 
           <button
             type="button"
             onClick={scrollTop}
-            className="transition hover:text-[#d9b978]"
+            className="w-fit font-bold text-black transition hover:text-[#a65d3b]"
           >
             Back to Top ↑
           </button>
+
         </div>
+
       </div>
     </footer>
   );

@@ -5,7 +5,6 @@ import About from "./About";
 import WhyJattari from "./WhyJattari";
 import Amenities from "./Amenities";
 import Keyplan from "./Keyplan";
-import LayoutSection from "./LayoutSection";
 import Gallery from "./Gallery";
 import FAQ from "./FAQ";
 import News from "./News";
@@ -20,7 +19,6 @@ function Home() {
       <Services />
       <Amenities />
       <Keyplan />
-      <LayoutSection />
       <Gallery />
       <FAQ />
       <News />

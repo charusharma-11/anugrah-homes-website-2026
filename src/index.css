@@ -83,13 +83,12 @@ header > div {
   padding-top: 10px !important;
 }
 
-/* Premium navbar link effect */
-
 .nav-link {
   position: relative;
   color: #3b2a24;
   font-size: 14px;
   font-weight: 600;
+
   transition:
     color 0.25s ease,
     transform 0.25s ease;
@@ -97,13 +96,17 @@ header > div {
 
 .nav-link::after {
   content: "";
+
   position: absolute;
   left: 50%;
   bottom: -7px;
+
   width: 0;
   height: 2px;
+
   border-radius: 999px;
   background: #a65d3b;
+
   transform: translateX(-50%);
   transition: width 0.3s ease;
 }
@@ -212,9 +215,13 @@ p {
 .mobile-link {
   display: block;
   width: 100%;
+
   border-radius: 12px;
+
   padding: 12px 15px;
+
   text-align: left;
+
   color: #3b2a24;
   font-size: 14px;
   font-weight: 600;
@@ -235,16 +242,12 @@ p {
    PREMIUM CARDS
    ================================ */
 
-/* Existing rounded cards get subtle premium movement */
-
 [class*="rounded-["] {
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.35s ease,
     border-color 0.35s ease;
 }
-
-/* Keep large page containers stable */
 
 section > div {
   transition: none;
@@ -261,8 +264,6 @@ img {
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.4s ease;
 }
-
-/* Only image hover effect */
 
 .group:hover img {
   transform: scale(1.025);
@@ -291,8 +292,6 @@ a[class*="rounded-full"]:hover {
   transform: translateY(-2px);
 }
 
-/* Button shine */
-
 a[class*="rounded-full"] {
   overflow: hidden;
 }
@@ -301,6 +300,7 @@ a[class*="rounded-full"]::after {
   content: "";
 
   position: absolute;
+
   top: 0;
   left: -120%;
 
@@ -355,6 +355,7 @@ section h2 {
 #contact input:focus,
 #contact textarea:focus {
   outline: none;
+
   border-color: #a65d3b;
 
   box-shadow:
@@ -362,14 +363,23 @@ section h2 {
     0 8px 24px rgba(59, 42, 36, 0.06);
 }
 
-/* ================================
-   FOOTER PREMIUM EFFECT
-   ================================ */
+/* =========================================================
+   FOOTER - FINAL RESPONSIVE VERSION
+   ========================================================= */
 
 .premium-footer {
   position: relative;
+
+  width: 100%;
+
   overflow: hidden;
+
+  background: #eee4d5;
+
+  color: #111111;
 }
+
+/* Footer decorative circle */
 
 .premium-footer::before {
   content: "";
@@ -382,7 +392,8 @@ section h2 {
   top: -250px;
   right: -170px;
 
-  border: 1px solid rgba(200, 166, 95, 0.12);
+  border: 1px solid rgba(166, 93, 59, 0.12);
+
   border-radius: 50%;
 
   pointer-events: none;
@@ -399,10 +410,25 @@ section h2 {
   bottom: -180px;
   left: -120px;
 
-  border: 1px solid rgba(200, 166, 95, 0.08);
+  border: 1px solid rgba(166, 93, 59, 0.1);
+
   border-radius: 50%;
 
   pointer-events: none;
+}
+
+/* Footer heading */
+
+.footer-heading {
+  color: #111111 !important;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.01em;
 }
 
 /* Footer links */
@@ -410,18 +436,40 @@ section h2 {
 .footer-link {
   width: fit-content;
 
+  color: #111111 !important;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+
   transition:
     transform 0.25s ease,
     color 0.25s ease;
 }
 
 .footer-link:hover {
+  color: #a65d3b !important;
+
   transform: translateX(5px);
 }
 
 /* Footer contact */
 
 .footer-contact-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  min-width: 0;
+
+  color: #111111 !important;
+
+  text-decoration: none;
+
   transition:
     transform 0.3s ease,
     opacity 0.3s ease;
@@ -431,7 +479,25 @@ section h2 {
   transform: translateX(5px);
 }
 
+/* Contact icon */
+
 .footer-contact-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  min-width: 40px;
+
+  border-radius: 12px;
+
+  background: #173f35;
+
+  color: #dfc995;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -439,15 +505,92 @@ section h2 {
 
 .footer-contact-item:hover .footer-contact-icon {
   transform: scale(1.08);
+
+  box-shadow:
+    0 8px 20px rgba(23, 63, 53, 0.18);
 }
 
-/* ================================
-   FOOTER ORBIT
-   ================================ */
+/* Contact labels */
+
+.footer-contact-label {
+  margin: 0;
+
+  color: #111111 !important;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+/* Contact text */
+
+.footer-contact-text {
+  margin: 4px 0 0;
+
+  color: #111111 !important;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+
+  word-break: break-word;
+
+  transition: color 0.25s ease;
+}
+
+.footer-contact-item:hover .footer-contact-text {
+  color: #a65d3b !important;
+}
+
+/* Contact button */
+
+.premium-footer a[href="/contact"] {
+  position: relative;
+
+  display: inline-flex;
+
+  color: #ffffff !important;
+
+  background: #173f35;
+
+  font-weight: 700;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.premium-footer a[href="/contact"]:hover {
+  color: #ffffff !important;
+
+  background: #a65d3b;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(166, 93, 59, 0.2);
+}
+
+/* Footer orbit */
 
 .footer-orbit {
   position: relative;
+
   width: 90px;
+
   height: 36px;
 }
 
@@ -457,9 +600,11 @@ section h2 {
   position: absolute;
 
   width: 75px;
+
   height: 28px;
 
-  border: 1px solid rgba(200, 166, 95, 0.35);
+  border: 1px solid rgba(166, 93, 59, 0.35);
+
   border-radius: 50%;
 
   transform: rotate(-12deg);
@@ -468,11 +613,14 @@ section h2 {
 .footer-orbit span {
   position: absolute;
 
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 
   border-radius: 50%;
-  background: #c8a65f;
+
+  background: #a65d3b;
+
+  animation: footerDotMove 2.5s ease-in-out infinite;
 }
 
 .footer-orbit span:nth-child(1) {
@@ -483,11 +631,53 @@ section h2 {
 .footer-orbit span:nth-child(2) {
   left: 43px;
   top: 3px;
+
+  width: 10px;
+  height: 10px;
+
+  background: #173f35;
+
+  animation-delay: 0.25s;
 }
 
 .footer-orbit span:nth-child(3) {
   right: 4px;
   bottom: 4px;
+
+  animation-delay: 0.5s;
+}
+
+@keyframes footerDotMove {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Footer bottom */
+
+.premium-footer .border-t {
+  border-color: rgba(59, 42, 36, 0.15) !important;
+}
+
+.premium-footer .border-t p {
+  color: #111111 !important;
+
+  font-weight: 700;
+}
+
+.premium-footer .border-t button {
+  color: #111111 !important;
+
+  font-weight: 700;
+}
+
+.premium-footer .border-t button:hover {
+  color: #a65d3b !important;
 }
 
 /* ================================
@@ -504,6 +694,7 @@ section h2 {
 
 ::-webkit-scrollbar-thumb {
   background: #a65d3b;
+
   border-radius: 20px;
 }
 
@@ -517,6 +708,7 @@ section h2 {
 
 ::selection {
   background: #b78a52;
+
   color: white;
 }
 
@@ -526,6 +718,7 @@ section h2 {
 
 :focus-visible {
   outline: 3px solid rgba(183, 138, 82, 0.5);
+
   outline-offset: 3px;
 }
 
@@ -540,9 +733,42 @@ section h2 {
 
   section:not(#home) {
     padding-top: 72px;
+
     padding-bottom: 72px;
   }
 }
+
+/* ================================
+   FOOTER TABLET
+   ================================ */
+
+@media (max-width: 1023px) {
+  .premium-footer {
+    padding-left: 24px;
+
+    padding-right: 24px;
+  }
+
+  .premium-footer .grid {
+    gap: 40px;
+  }
+
+  .footer-heading {
+    font-size: 15px;
+  }
+
+  .footer-link {
+    font-size: 14px;
+  }
+
+  .footer-contact-text {
+    font-size: 14px;
+  }
+}
+
+/* ================================
+   MOBILE
+   ================================ */
 
 @media (max-width: 767px) {
   header > div {
@@ -551,6 +777,7 @@ section h2 {
 
   section:not(#home) {
     padding-top: 58px;
+
     padding-bottom: 58px;
   }
 
@@ -558,7 +785,7 @@ section h2 {
     min-height: 100vh;
   }
 
-  /* Keep mobile movement subtle */
+  /* Disable large hover movement */
 
   [class*="rounded-["]:hover {
     transform: none;
@@ -573,9 +800,378 @@ section h2 {
     transform: none;
   }
 
+  /* Footer */
+
+  .premium-footer {
+    padding: 42px 18px 20px;
+  }
+
+  .premium-footer .grid {
+    grid-template-columns: 1fr !important;
+
+    gap: 38px !important;
+  }
+
+  .premium-footer .font-serif {
+    font-size: 27px;
+  }
+
+  .premium-footer .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 20px;
+
+    row-gap: 13px;
+  }
+
+  .footer-link {
+    font-size: 13px;
+  }
+
+  .footer-contact-item {
+    gap: 12px;
+  }
+
+  .footer-contact-icon {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    border-radius: 10px;
+  }
+
+  .footer-contact-label {
+    font-size: 10px;
+  }
+
+  .footer-contact-text {
+    font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+  .premium-footer a[href="/contact"] {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .premium-footer .border-t {
+    margin-top: 36px;
+  }
+
+  .premium-footer .border-t p,
+  .premium-footer .border-t button {
+    font-size: 11px;
+  }
+
+  .premium-footer::before {
+    width: 260px;
+
+    height: 260px;
+
+    top: -160px;
+
+    right: -130px;
+  }
+
+  .premium-footer::after {
+    width: 190px;
+
+    height: 190px;
+
+    bottom: -120px;
+
+    left: -100px;
+  }
+
   .footer-link:hover,
   .footer-contact-item:hover {
     transform: none;
+  }
+}
+
+/* ================================
+   SMALL IPHONE
+   ================================ */
+
+@media (max-width: 380px) {
+  .premium-footer {
+    padding-left: 14px;
+
+    padding-right: 14px;
+  }
+
+  .premium-footer .grid-cols-2 {
+    column-gap: 14px;
+  }
+
+  .footer-link {
+    font-size: 12px;
+  }
+
+  .footer-contact-text {
+    font-size: 12px;
+  }
+
+  .footer-contact-icon {
+    width: 36px;
+
+    height: 36px;
+
+    min-width: 36px;
+  }
+
+  .footer-contact-label {
+    font-size: 9px;
+  }
+}
+
+/* ================================
+   TOUCH DEVICES
+   ================================ */
+
+@media (hover: none) {
+  .footer-link:hover {
+    transform: none;
+  }
+
+  .footer-contact-item:hover {
+    transform: none;
+  }
+
+  .footer-contact-item:hover .footer-contact-icon {
+    transform: none;
+
+    box-shadow: none;
+  }
+}
+
+/* =========================================================
+   ABOUT PAGE - CIRCULAR CARD ORBIT
+   ========================================================= */
+
+.about-card-orbit {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  height: 800px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.about-card-orbit::before {
+  content: "";
+
+  position: absolute;
+
+  width: 720px;
+
+  height: 720px;
+
+  border: 1px dashed rgba(166, 93, 59, 0.28);
+
+  border-radius: 50%;
+
+  animation: aboutOrbitRing 18s linear infinite;
+}
+
+.about-card-orbit-inner {
+  position: relative;
+
+  width: 720px;
+
+  height: 720px;
+
+  animation: aboutOrbitRotate 22s linear infinite;
+}
+
+/* About cards */
+
+.about-orbit-card {
+  position: absolute;
+
+  width: 220px;
+
+  min-height: 220px;
+
+  padding: 26px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 15px 40px rgba(59, 42, 36, 0.12);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  transition: box-shadow 0.35s ease;
+}
+
+.about-orbit-card-content {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  animation: aboutKeepContentStraight 22s linear infinite;
+}
+
+/* About card positions */
+
+.about-orbit-card-1 {
+  top: -20px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.about-orbit-card-2 {
+  top: 50%;
+
+  right: -20px;
+
+  transform: translateY(-50%);
+}
+
+.about-orbit-card-3 {
+  bottom: -20px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.about-orbit-card-4 {
+  top: 50%;
+
+  left: -20px;
+
+  transform: translateY(-50%);
+}
+
+/* About animation */
+
+@keyframes aboutOrbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aboutOrbitRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes aboutKeepContentStraight {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* About hover */
+
+.about-orbit-card:hover {
+  box-shadow:
+    0 24px 60px rgba(59, 42, 36, 0.2);
+}
+
+/* About mobile */
+
+@media (max-width: 767px) {
+  .about-card-orbit {
+    height: 950px;
+  }
+
+  .about-card-orbit::before {
+    width: 400px;
+
+    height: 400px;
+  }
+
+  .about-card-orbit-inner {
+    width: 400px;
+
+    height: 400px;
+  }
+
+  .about-orbit-card {
+    width: 155px;
+
+    min-height: 155px;
+
+    padding: 18px;
+  }
+
+  .about-orbit-card h3 {
+    margin-top: 10px;
+
+    font-size: 14px;
+  }
+
+  .about-orbit-card p {
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+  }
+
+  .about-orbit-card .h-12 {
+    width: 38px;
+
+    height: 38px;
+  }
+
+  .about-orbit-card-1 {
+    top: -10px;
+  }
+
+  .about-orbit-card-2 {
+    right: -10px;
+  }
+
+  .about-orbit-card-3 {
+    bottom: -10px;
+  }
+
+  .about-orbit-card-4 {
+    left: -10px;
   }
 }
 
@@ -588,7 +1184,9 @@ section h2 {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+
     animation-duration: 0.01ms !important;
+
     transition-duration: 0.01ms !important;
   }
 }

@@ -93,13 +93,7 @@ function Navbar() {
                   Keyplan
                 </Link>
 
-                <Link
-                  to="/layout"
-                  onClick={closeMenu}
-                  className="block rounded-xl px-4 py-3 text-sm text-[#3B2A24] hover:bg-[#F7F1E7] hover:text-[#A65D3B]"
-                >
-                  Layout
-                </Link>
+              
 
                 <Link
                   to="/gallery"
