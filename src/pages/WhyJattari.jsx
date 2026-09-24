@@ -178,24 +178,24 @@ function WhyJattari() {
                 {title}
               </h2>
 
-              <p className="mt-3 leading-7 text-[#70665f]">
+              <p className="mt-3 leading-7 text-text-[#365b4f]">
                 {text}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 rounded-[32px] bg-[#173f35] p-8 text-white md:p-12">
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Designed With Residential Living in Mind
-          </h2>
+        <div className="mt-16 rounded-[32px] bg-[#dfe9e3] p-8 md:p-12">
+  <h2 className="text-3xl font-bold text-[#173f35] md:text-4xl">
+    Designed With Residential Living in Mind
+  </h2>
 
-          <p className="mt-5 max-w-4xl leading-8 text-white/75">
-            Jattari combines organized plot planning, internal connectivity,
-            open spaces and residential-focused infrastructure to create a
-            balanced project environment.
-          </p>
-        </div>
+  <p className="mt-5 max-w-4xl leading-8 text-[#365b4f]">
+    Jattari combines organized plot planning, internal connectivity,
+    open spaces and residential-focused infrastructure to create a
+    balanced project environment.
+  </p>
+</div>
 
       </div>
     </section>
@@ -203,3 +203,5 @@ function WhyJattari() {
 }
 
 export default WhyJattari;
+
+
