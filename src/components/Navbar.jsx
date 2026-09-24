@@ -1,266 +1,254 @@
 import { useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
-import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
-  const services = [
-    ["Amenities", "/amenities"],
-    ["Price", "/price"],
-    ["Keyplan", "/keyplan"],
-    ["Layout", "/layout"],
-    ["Gallery", "/gallery"],
-  ];
-
   const closeMenu = () => {
     setMobileOpen(false);
     setServicesOpen(false);
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
   };
 
   const navClass = ({ isActive }) =>
-    `relative whitespace-nowrap text-[13px] font-semibold tracking-wide transition-all duration-300 ${
+    `transition-colors duration-200 ${
       isActive
-        ? "text-[#d8b56c]"
-        : "text-white/75 hover:text-[#d8b56c]"
+        ? "text-[#A65D3B] font-semibold"
+        : "text-[#3B2A24] hover:text-[#A65D3B]"
     }`;
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-[100]">
-      <div className="mx-auto w-full max-w-[1550px] px-3 pt-3 sm:px-5 sm:pt-4 lg:px-8">
-        <nav className="premium-navbar">
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-[#E5D8C8] bg-[#F7F1E7]/95 backdrop-blur-md">
+      <div className="mx-auto flex h-[76px] max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:px-10">
 
-          <div className="flex min-h-[68px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-7">
+        {/* LOGO */}
+        <Link to="/" className="flex flex-col leading-none">
+  <span className="font-serif text-xl font-bold tracking-wide text-[#173f35]">
+    JATTARI
+  </span>
+  <span className="mt-1 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#b18b4f]">
+    Premium Plots
+  </span>
+</Link>
+        {/* DESKTOP NAV */}
+        <nav className="hidden items-center gap-8 text-[15px] lg:flex xl:gap-10">
 
-            {/* LOGO */}
-            <Link
-              to="/"
-              onClick={closeMenu}
-              className="flex shrink-0 items-center gap-3"
-            >
-              <div className="premium-logo">
-                <img
-                  src="/images/jattari-logo.png"
-                  alt="Jattari"
-                  className="h-full w-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src = "/images/anugrah-logo.jpg";
-                  }}
-                />
-              </div>
+          <NavLink to="/" end className={navClass}>
+            Home
+          </NavLink>
 
-              <div className="hidden sm:block">
-                <p className="font-serif text-[19px] font-bold text-white">
-                  Jattari
-                </p>
+          <NavLink to="/about" className={navClass}>
+            About Us
+          </NavLink>
 
-                <p className="mt-0.5 text-[8px] font-bold uppercase tracking-[0.28em] text-[#d8b56c]">
-                  Premium Plots
-                </p>
-              </div>
-            </Link>
+          <NavLink to="/why-jattari" className={navClass}>
+            Why Jattari
+          </NavLink>
 
-            {/* DESKTOP NAV */}
-            <div className="hidden items-center gap-6 lg:flex xl:gap-8">
-
-              <NavLink to="/" end className={navClass}>
-                Home
-              </NavLink>
-
-              <NavLink to="/about" className={navClass}>
-                About Us
-              </NavLink>
-
-              <NavLink to="/why-jattari" className={navClass}>
-                Why Jattari
-              </NavLink>
-
-              {/* SERVICES */}
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setServicesOpen((value) => !value)
-                  }
-                  className="flex items-center gap-1.5 whitespace-nowrap text-[13px] font-semibold tracking-wide text-white/75 transition hover:text-[#d8b56c]"
-                >
-                  Services
-
-                  <ChevronDown
-                    size={15}
-                    className={`transition-transform duration-300 ${
-                      servicesOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {servicesOpen && (
-                  <div className="premium-dropdown absolute left-1/2 top-full mt-4 w-60 -translate-x-1/2 p-2">
-
-                    <div className="mb-1 px-3 py-2">
-                      <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-[#ae8747]">
-                        Explore Project
-                      </p>
-                    </div>
-
-                    {services.map(([name, path]) => (
-                      <Link
-                        key={path}
-                        to={path}
-                        onClick={closeMenu}
-                        className="group flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 transition-all hover:bg-[#173f35] hover:text-white"
-                      >
-                        {name}
-
-                        <ArrowUpRight
-                          size={15}
-                          className="text-[#b99652] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <NavLink to="/faq" className={navClass}>
-                FAQ
-              </NavLink>
-
-              <NavLink to="/news" className={navClass}>
-                News
-              </NavLink>
-
-              <NavLink to="/contact" className={navClass}>
-                Contact
-              </NavLink>
-            </div>
-
-            {/* CONTACT BUTTON */}
-            <Link
-              to="/contact"
-              onClick={closeMenu}
-              className="premium-nav-button hidden lg:inline-flex"
-            >
-              Contact Us
-              <ArrowUpRight size={15} />
-            </Link>
-
-            {/* MOBILE BUTTON */}
+          {/* SERVICES DROPDOWN */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
             <button
               type="button"
-              onClick={() => setMobileOpen((value) => !value)}
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/10 text-white backdrop-blur-md transition hover:bg-[#b99552] lg:hidden"
-              aria-label="Toggle navigation"
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="flex items-center gap-1.5 text-[#3B2A24] transition-colors hover:text-[#A65D3B]"
             >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              Services
+              <ChevronDown
+                size={16}
+                className={`transition-transform ${
+                  servicesOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
+
+            {servicesOpen && (
+              <div className="absolute left-1/2 top-full mt-3 w-56 -translate-x-1/2 rounded-2xl border border-[#E5D8C8] bg-white p-2 shadow-xl">
+
+                <Link
+                  to="/amenities"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#3B2A24] hover:bg-[#F7F1E7] hover:text-[#A65D3B]"
+                >
+                  Amenities
+                </Link>
+
+                <Link
+                  to="/price"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#3B2A24] hover:bg-[#F7F1E7] hover:text-[#A65D3B]"
+                >
+                  Price
+                </Link>
+
+                <Link
+                  to="/keyplan"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#3B2A24] hover:bg-[#F7F1E7] hover:text-[#A65D3B]"
+                >
+                  Keyplan
+                </Link>
+
+                <Link
+                  to="/layout"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#3B2A24] hover:bg-[#F7F1E7] hover:text-[#A65D3B]"
+                >
+                  Layout
+                </Link>
+
+                <Link
+                  to="/gallery"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#3B2A24] hover:bg-[#F7F1E7] hover:text-[#A65D3B]"
+                >
+                  Gallery
+                </Link>
+
+              </div>
+            )}
           </div>
 
-          {/* MOBILE MENU */}
-          {mobileOpen && (
-            <div className="border-t border-white/10 px-4 pb-5 pt-4 lg:hidden">
+          <NavLink to="/faq" className={navClass}>
+            FAQ
+          </NavLink>
 
-              <div className="space-y-1">
+          <NavLink to="/news" className={navClass}>
+            News
+          </NavLink>
 
-                <Link
-                  to="/"
-                  onClick={closeMenu}
-                  className="mobile-nav-link"
-                >
-                  Home
-                </Link>
+          <NavLink to="/contact" className={navClass}>
+            Contact
+          </NavLink>
 
-                <Link
-                  to="/about"
-                  onClick={closeMenu}
-                  className="mobile-nav-link"
-                >
-                  About Us
-                </Link>
-
-                <Link
-                  to="/why-jattari"
-                  onClick={closeMenu}
-                  className="mobile-nav-link"
-                >
-                  Why Jattari
-                </Link>
-
-                <button
-                  type="button"
-                  onClick={() =>
-                    setServicesOpen((value) => !value)
-                  }
-                  className="mobile-nav-link flex w-full items-center justify-between"
-                >
-                  Services
-
-                  <ChevronDown
-                    size={17}
-                    className={
-                      servicesOpen ? "rotate-180" : ""
-                    }
-                  />
-                </button>
-
-                {servicesOpen && (
-                  <div className="ml-3 space-y-1 border-l border-[#b99552]/30 pl-3">
-                    {services.map(([name, path]) => (
-                      <Link
-                        key={path}
-                        to={path}
-                        onClick={closeMenu}
-                        className="block rounded-xl px-4 py-3 text-sm text-white/60 transition hover:bg-white/5 hover:text-[#d8b56c]"
-                      >
-                        {name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-
-                <Link
-                  to="/faq"
-                  onClick={closeMenu}
-                  className="mobile-nav-link"
-                >
-                  FAQ
-                </Link>
-
-                <Link
-                  to="/news"
-                  onClick={closeMenu}
-                  className="mobile-nav-link"
-                >
-                  News
-                </Link>
-
-                <Link
-                  to="/contact"
-                  onClick={closeMenu}
-                  className="mobile-nav-link"
-                >
-                  Contact
-                </Link>
-
-                <Link
-                  to="/contact"
-                  onClick={closeMenu}
-                  className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-[#c8a65f] px-4 py-3.5 text-sm font-bold text-[#10251e]"
-                >
-                  Contact Us
-                  <ArrowUpRight size={16} />
-                </Link>
-              </div>
-            </div>
-          )}
         </nav>
+
+        {/* MOBILE MENU BUTTON */}
+        <button
+          type="button"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#3B2A24] text-white lg:hidden"
+        >
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+
       </div>
+
+      {/* MOBILE MENU */}
+      {mobileOpen && (
+        <div className="border-t border-[#E5D8C8] bg-[#F7F1E7] px-5 py-5 shadow-lg lg:hidden">
+
+          <div className="flex flex-col gap-1">
+
+            <NavLink to="/" end onClick={closeMenu} className={navClass}>
+              <div className="rounded-xl px-4 py-3">
+                Home
+              </div>
+            </NavLink>
+
+            <NavLink to="/about" onClick={closeMenu} className={navClass}>
+              <div className="rounded-xl px-4 py-3">
+                About Us
+              </div>
+            </NavLink>
+
+            <NavLink
+              to="/why-jattari"
+              onClick={closeMenu}
+              className={navClass}
+            >
+              <div className="rounded-xl px-4 py-3">
+                Why Jattari
+              </div>
+            </NavLink>
+
+            {/* MOBILE SERVICES */}
+            <button
+              type="button"
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-[#3B2A24]"
+            >
+              <span>Services</span>
+
+              <ChevronDown
+                size={17}
+                className={`transition-transform ${
+                  servicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {servicesOpen && (
+              <div className="ml-5 border-l border-[#D7C6B4] pl-3">
+
+                <Link
+                  to="/amenities"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#5B4840] hover:bg-white hover:text-[#A65D3B]"
+                >
+                  Amenities
+                </Link>
+
+                <Link
+                  to="/price"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#5B4840] hover:bg-white hover:text-[#A65D3B]"
+                >
+                  Price
+                </Link>
+
+                <Link
+                  to="/keyplan"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#5B4840] hover:bg-white hover:text-[#A65D3B]"
+                >
+                  Keyplan
+                </Link>
+
+                <Link
+                  to="/layout"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#5B4840] hover:bg-white hover:text-[#A65D3B]"
+                >
+                  Layout
+                </Link>
+
+                <Link
+                  to="/gallery"
+                  onClick={closeMenu}
+                  className="block rounded-xl px-4 py-3 text-sm text-[#5B4840] hover:bg-white hover:text-[#A65D3B]"
+                >
+                  Gallery
+                </Link>
+
+              </div>
+            )}
+
+            <NavLink to="/faq" onClick={closeMenu} className={navClass}>
+              <div className="rounded-xl px-4 py-3">
+                FAQ
+              </div>
+            </NavLink>
+
+            <NavLink to="/news" onClick={closeMenu} className={navClass}>
+              <div className="rounded-xl px-4 py-3">
+                News
+              </div>
+            </NavLink>
+
+            <NavLink to="/contact" onClick={closeMenu} className={navClass}>
+              <div className="rounded-xl px-4 py-3">
+                Contact
+              </div>
+            </NavLink>
+
+          </div>
+        </div>
+      )}
     </header>
   );
 }

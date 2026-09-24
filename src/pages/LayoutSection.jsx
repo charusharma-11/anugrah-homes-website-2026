@@ -1,74 +1,422 @@
-import { ArrowRight, Car, Compass, Home, Trees } from "lucide-react";
+// // // function LayoutSection() {
+// // //   return (
+// // //     <section className="min-h-screen bg-[#f7f1e7] px-6 py-32">
+// // //       <div className="mx-auto max-w-7xl">
+
+// // //         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#a65d3b]">
+// // //           Services / Layout
+// // //         </p>
+
+// // //         <h1 className="mt-4 text-4xl font-bold text-[#3b2a24] md:text-6xl">
+// // //           Project Layout
+// // //         </h1>
+
+// // //         <p className="mt-6 max-w-3xl text-lg leading-8 text-[#70665f]">
+// // //           Explore the planned layout of the Jattari residential project,
+// // //           including the arrangement of plots and development spaces.
+// // //         </p>
+
+// // //         <div className="mt-12 overflow-hidden rounded-[32px] bg-white p-5 shadow-xl">
+// // //           <img
+// // //             src="/images/layout-plan.png"
+// // //             alt="Jattari Project Layout Plan"
+// // //            className="mx-auto w-full max-w-3xl rounded-2xl object-contain"
+// // //           />
+// // //         </div>
+
+// // //       </div>
+// // //     </section>
+// // //   );
+// // // }
+
+// // // export default LayoutSection;
+
+
+
+
+// // // function LayoutSection() {
+// // //   return (
+// // //     <section className="min-h-screen bg-[#f7f1e7] px-6 py-32">
+// // //       <div className="mx-auto max-w-7xl">
+
+// // //         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#a65d3b]">
+// // //           Services / Layout
+// // //         </p>
+
+// // //         <h1 className="mt-4 text-4xl font-bold text-[#3b2a24] md:text-6xl">
+// // //           Project Layout
+// // //         </h1>
+
+// // //         <p className="mt-6 max-w-3xl text-lg leading-8 text-[#70665f]">
+// // //           Explore the planned layout of the Jattari residential project,
+// // //           including the arrangement of plots and development spaces.
+// // //         </p>
+
+// // //         <div className="mt-12 overflow-hidden rounded-[32px] bg-white p-5 shadow-xl">
+// // //           <img
+// // //             src="/images/layout-plan.png"
+// // //             alt="Jattari Project Layout Plan"
+// // //             className="max-h-[650px] max-width-[500px] rounded-[2rem] object-contain"
+// // //           />
+// // //         </div>
+
+// // //       </div>
+// // //     </section>
+// // //   );
+// // // }
+
+// // // export default LayoutSection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // import { Building2, Car, TreePine, Maximize2 } from "lucide-react";
+
+// // function LayoutSection() {
+// //   return (
+// //     <section className="min-h-screen bg-[#f7f1e7] px-6 py-32">
+// //       <div className="mx-auto max-w-7xl">
+
+// //         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#a65d3b]">
+// //           Services / Layout
+// //         </p>
+
+// //         <h1 className="mt-4 text-4xl font-bold text-[#3b2a24] md:text-6xl">
+// //           Project Layout
+// //         </h1>
+
+// //         <p className="mt-6 max-w-3xl text-lg leading-8 text-[#70665f]">
+// //           Explore the planned layout of the Jattari residential project,
+// //           including the arrangement of plots and development spaces.
+// //         </p>
+
+// //         <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
+
+// //           {/* Layout Image */}
+// //           <div className="overflow-hidden rounded-[32px] bg-white p-5 shadow-xl">
+// //             <img
+// //               src="/images/layout-plan.png"
+// //               alt="Jattari Project Layout Plan"
+// //               className="max-h-[650px] max-width-[500px] w-full rounded-[2rem] object-contain"
+// //             />
+// //           </div>
+
+// //           {/* Right Side Content */}
+// //           <div className="space-y-8">
+
+// //             <div>
+// //               <h2 className="text-3xl font-bold text-[#173f35] md:text-4xl">
+// //                 Well-Planned Infrastructure
+// //               </h2>
+
+// //               <p className="mt-5 text-base leading-7 text-[#70665f]">
+// //                 Our layout plan showcases a meticulously designed residential
+// //                 community with strategic plot allocation, wide roads, green
+// //                 spaces, and modern amenities. Every detail has been planned to
+// //                 ensure optimal living experience.
+// //               </p>
+// //             </div>
+
+// //             {/* Strategic Plot Allocation */}
+// //             <div className="flex gap-5">
+// //               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#173f35] text-[#dfc995]">
+// //                 <Maximize2 size={22} />
+// //               </div>
+
+// //               <div>
+// //                 <h3 className="text-xl font-semibold text-[#3b2a24]">
+// //                   Strategic Plot Allocation
+// //                 </h3>
+
+// //                 <p className="mt-2 leading-6 text-[#70665f]">
+// //                   Plots are strategically positioned for maximum privacy and
+// //                   optimal sunlight.
+// //                 </p>
+// //               </div>
+// //             </div>
+
+// //             {/* Wide Road Network */}
+// //             <div className="flex gap-5">
+// //               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#173f35] text-[#dfc995]">
+// //                 <Car size={22} />
+// //               </div>
+
+// //               <div>
+// //                 <h3 className="text-xl font-semibold text-[#3b2a24]">
+// //                   Wide Road Network
+// //                 </h3>
+
+// //                 <p className="mt-2 leading-6 text-[#70665f]">
+// //                   Well-planned road connectivity ensuring easy access to all
+// //                   plots and amenities.
+// //                 </p>
+// //               </div>
+// //             </div>
+
+// //             {/* Green Spaces */}
+// //             <div className="flex gap-5">
+// //               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#173f35] text-[#dfc995]">
+// //                 <TreePine size={22} />
+// //               </div>
+
+// //               <div>
+// //                 <h3 className="text-xl font-semibold text-[#3b2a24]">
+// //                   Green Spaces & Parks
+// //                 </h3>
+
+// //                 <p className="mt-2 leading-6 text-[#70665f]">
+// //                   Dedicated areas for parks and recreational spaces throughout
+// //                   the community.
+// //                 </p>
+// //               </div>
+// //             </div>
+
+// //             {/* Modern Amenities */}
+// //             <div className="flex gap-5">
+// //               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#173f35] text-[#dfc995]">
+// //                 <Building2 size={22} />
+// //               </div>
+
+// //               <div>
+// //                 <h3 className="text-xl font-semibold text-[#3b2a24]">
+// //                   Modern Amenities
+// //                 </h3>
+
+// //                 <p className="mt-2 leading-6 text-[#70665f]">
+// //                   All essential amenities are strategically placed for easy
+// //                   access from every plot.
+// //                 </p>
+// //               </div>
+// //             </div>
+
+// //           </div>
+// //         </div>
+
+// //       </div>
+// //     </section>
+// //   );
+// // }
+
+// // export default LayoutSection;
+
+// import {
+//   Maximize2,
+//   Route,
+//   Trees,
+//   Building2,
+// } from "lucide-react";
+
+// function LayoutSection() {
+//   const features = [
+//     [
+//       Maximize2,
+//       "Strategic Plot Allocation",
+//       "Plots are thoughtfully positioned to provide efficient space utilization, privacy, and comfortable living.",
+//     ],
+//     [
+//       Route,
+//       "Wide Road Network",
+//       "Well-planned internal roads provide smooth connectivity and convenient access to residential plots.",
+//     ],
+//     [
+//       Trees,
+//       "Green Spaces & Parks",
+//       "Dedicated green areas and open spaces create a pleasant and refreshing residential environment.",
+//     ],
+//     [
+//       Building2,
+//       "Modern Amenities",
+//       "Essential amenities are strategically planned to provide convenience and easy access for residents.",
+//     ],
+//   ];
+
+//   return (
+//     <section className="min-h-screen bg-[#f7f1e7] px-6 py-32">
+//       <div className="mx-auto max-w-7xl">
+
+//         {/* Heading */}
+//         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#a65d3b]">
+//           Services / Layout
+//         </p>
+
+//         <h1 className="mt-4 text-4xl font-bold text-[#3b2a24] md:text-6xl">
+//           Project Layout
+//         </h1>
+
+//         <p className="mt-6 max-w-3xl text-lg leading-8 text-[#70665f]">
+//           Explore the planned layout of the Jattari residential project,
+//           including the arrangement of plots, roads, green spaces and
+//           development areas.
+//         </p>
+
+//         {/* Image + Content */}
+//         <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
+
+//           {/* Layout Image */}
+//           <div className="overflow-hidden rounded-[32px] bg-white p-5 shadow-xl">
+//             <img
+//               src="/images/layout-plan.png"
+//               alt="Jattari Project Layout Plan"
+//               className="mx-auto max-h-[650px] w-full max-w-[500px] rounded-[2rem] object-contain"
+//             />
+//           </div>
+
+//           {/* Right Content */}
+//           <div>
+
+//             <h2 className="text-3xl font-bold text-[#173f35] md:text-4xl">
+//               Well-Planned Infrastructure
+//             </h2>
+
+//             <p className="mt-5 text-base leading-7 text-[#70665f]">
+//               Our layout plan showcases a meticulously designed residential
+//               community with strategic plot allocation, wide roads, green
+//               spaces, and modern amenities. Every detail has been planned to
+//               ensure an optimal living experience.
+//             </p>
+
+//             {/* Features */}
+//             <div className="mt-8 space-y-6">
+
+//               {features.map(([Icon, title, text]) => (
+//                 <div
+//                   key={title}
+//                   className="flex gap-4"
+//                 >
+//                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#173f35] text-[#dfc995]">
+//                     <Icon size={21} />
+//                   </div>
+
+//                   <div>
+//                     <h3 className="text-lg font-semibold text-[#3b2a24]">
+//                       {title}
+//                     </h3>
+
+//                     <p className="mt-1 text-sm leading-6 text-[#70665f]">
+//                       {text}
+//                     </p>
+//                   </div>
+//                 </div>
+//               ))}
+
+//             </div>
+//           </div>
+
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default LayoutSection;
+
+import {
+  Maximize2,
+  Route,
+  Trees,
+  Building2,
+} from "lucide-react";
 
 function LayoutSection() {
-  const go = () => {
-    document.getElementById("gallery")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
-  const items = [
-    [Home, "Residential Plots", "Explore the planned residential plot arrangement."],
-    [Car, "Internal Roads", "Understand the road structure connecting project areas."],
-    [Trees, "Open Spaces", "View the overall placement of planned open areas."],
-    [Compass, "Project Orientation", "Understand the overall project direction."],
+  const features = [
+    [
+      Maximize2,
+      "Strategic Plot Allocation",
+      "Plots are strategically positioned for maximum privacy and optimal sunlight.",
+    ],
+    [
+      Route,
+      "Wide Road Network",
+      "Well-planned road connectivity ensuring easy access to all plots and amenities.",
+    ],
+    [
+      Trees,
+      "Green Spaces & Parks",
+      "Dedicated areas for parks and recreational spaces throughout the community.",
+    ],
+    [
+      Building2,
+      "Modern Amenities",
+      "All essential amenities are strategically placed for easy access from every plot.",
+    ],
   ];
 
   return (
-    <section id="layout" className="bg-white py-24">
-      <div className="mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-10">
-        <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b18b4f]">
-            Project Layout
-          </p>
+    <section className="min-h-screen bg-[#f7f1e7] px-6 py-32">
+      <div className="mx-auto max-w-7xl">
 
-          <h2 className="mt-3 font-serif text-4xl font-semibold text-[#173f35] sm:text-5xl">
-            Everything Planned
-            <span className="block text-[#b18b4f]">
-              With Purpose
-            </span>
-          </h2>
-        </div>
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#a65d3b]">
+          Services / Layout
+        </p>
 
-        <div className="mt-14 grid items-center gap-10 lg:grid-cols-[1.3fr_0.7fr]">
-          <div className="rounded-[2.5rem] bg-[#f7f3ea] p-3 shadow-xl">
+        <h1 className="mt-4 text-4xl font-bold text-[#3b2a24] md:text-6xl">
+          Project Layout
+        </h1>
+
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-[#70665f]">
+          Explore the planned layout of the Jattari residential project,
+          including the arrangement of plots and development spaces.
+        </p>
+
+        <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
+
+          <div className="overflow-hidden rounded-[32px] bg-white p-5 shadow-xl">
             <img
               src="/images/layout-plan.png"
-              alt="Anugrah Homes project layout plan"
-              className="max-h-[650px] w-full rounded-[2rem] object-contain"
+              alt="Jattari Project Layout Plan"
+              className="mx-auto max-h-[650px] w-full max-w-[500px] rounded-[2rem] object-contain"
             />
           </div>
 
-          <div className="space-y-5">
-            {items.map(([Icon, title, text]) => (
-              <div
-                key={title}
-                className="rounded-[1.75rem] border border-[#173f35]/10 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#173f35] text-[#dfc995]">
-                    <Icon size={19} />
+          <div>
+            <h2 className="text-3xl font-bold text-[#173f35] md:text-4xl">
+              Well-Planned Infrastructure
+            </h2>
+
+            <p className="mt-5 leading-8 text-[#70665f]">
+              Our layout plan showcases a meticulously designed residential
+              community with strategic plot allocation, wide roads, green
+              spaces, and modern amenities. Every detail has been planned to
+              ensure optimal living experience.
+            </p>
+
+            <div className="mt-8 space-y-6">
+              {features.map(([Icon, title, text]) => (
+                <div key={title} className="flex gap-4">
+
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#173f35] text-[#dfc995]">
+                    <Icon size={21} />
                   </div>
 
-                  <h3 className="font-serif text-xl font-semibold text-[#173f35]">
-                    {title}
-                  </h3>
+                  <div>
+                    <h3 className="text-lg font-semibold text-[#3b2a24]">
+                      {title}
+                    </h3>
+
+                    <p className="mt-1 leading-6 text-[#70665f]">
+                      {text}
+                    </p>
+                  </div>
+
                 </div>
-
-                <p className="mt-3 text-sm leading-6 text-gray-500">
-                  {text}
-                </p>
-              </div>
-            ))}
-
-            <button
-              onClick={go}
-              className="inline-flex items-center gap-2 rounded-full bg-[#173f35] px-6 py-3.5 text-sm font-semibold text-white hover:bg-[#b18b4f]"
-            >
-              View Gallery
-              <ArrowRight size={17} />
-            </button>
+              ))}
+            </div>
           </div>
+
         </div>
       </div>
     </section>

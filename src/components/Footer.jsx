@@ -31,14 +31,14 @@ function Footer() {
               className="inline-flex items-center gap-3"
             >
               <div className="premium-footer-logo">
-                <img
-                  src="/images/jattari-logo.png"
-                  alt="Jattari"
-                  className="h-full w-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src = "/images/anugrah-logo.jpg";
-                  }}
-                />
+                <Link to="/" className="inline-flex flex-col leading-none">
+  <span className="font-serif text-2xl font-bold tracking-wide text-white">
+    JATTARI
+  </span>
+  <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#dfc995]">
+    Premium Plots
+  </span>
+</Link>
               </div>
 
               <div>
